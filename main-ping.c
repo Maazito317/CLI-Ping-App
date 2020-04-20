@@ -48,9 +48,6 @@ struct icmphdr {
 #include <fcntl.h>
 #include <signal.h>
 
-
-
-
 //Define the packet constants
 #define PKT_SIZE 64
 #define PORT_NUM 0
@@ -334,9 +331,7 @@ int main(int argc, char *argv[]){
             printf("\nDNS lookup failed! Could not resolve hostname!\n");
             return 0;
         }
-        //rev_hostname = reverse_dns6_lookup(ip_addr);
         printf("\nTrying to connect to '%s' IP: %s\n", argv[1], ip_addr);
-        //printf("\nReverse Lookup domain: %s\n", rev_hostname);
         sockfd = socket(AF_INET6, SOCK_RAW, IPPROTO_ICMPV6);
         if (sockfd < 0) {
             printf("\nSocket file descriptor not received!!\n");
@@ -354,9 +349,7 @@ int main(int argc, char *argv[]){
             return 0;
         }
 
-        //rev_hostname = reverse_dns_lookup(ip_addr);
         printf("\nTrying to connect to '%s' IP: %s\n", argv[1], ip_addr);
-        //printf("\nReverse Lookup domain: %s\n", rev_hostname);
 
         sockfd = socket(AF_INET, SOCK_RAW, IPPROTO_ICMP);
         if (sockfd < 0) {
